@@ -1,10 +1,10 @@
 import {DataTable, Given, Then, When} from '@cucumber/cucumber';
 import {page} from './hook'
+import {CookieBanner} from "../pages/CookieBanner";
 
 Given('The user accept the cookies', async () => {
-    await page.locator('cmm-cookie-banner')
-        .locator('cmm-buttons-wrapper .wb-button--accept-all')
-        .click()
+    const cookieBanner = new CookieBanner(page);
+    await cookieBanner.acceptAll();
 });
 
 Given('The user populate the Location as bellow', async (dataTable: DataTable) => {
