@@ -3,7 +3,7 @@ import {ElementHandle, Page} from "@playwright/test";
 export class CookieBanner {
 
     private cookieBannerShadowRoot;
-    private acceptAllButton: ElementHandle;
+    private acceptAllButton;
 
     constructor(page: Page) {
         this.cookieBannerShadowRoot = page.locator('cmm-cookie-banner');
