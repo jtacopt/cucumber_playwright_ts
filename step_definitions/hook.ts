@@ -11,7 +11,7 @@ Before(async () => {
         browser = await chromium.launch({headless: false});
         const context = await browser.newContext();
         page = await context.newPage();
-        await page.goto("https://shop.mercedes-benz.com/en-au/shop/vehicle/srp/used?");
+        await page.goto("about:blank");
         console.log(`Capture site title as ${await page.title()}`);
     } catch (error) {
         console.log(error)
