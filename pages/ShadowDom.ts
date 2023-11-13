@@ -12,8 +12,9 @@ export class ShadowDom {
         this.shadowRoot = page.locator('guid-generator');
     }
 
-    openPage() {
-        page.goto("http://www.uitestingplayground.com/shadowdom");
+    async openPage() {
+        await page.goto("http://www.uitestingplayground.com/shadowdom");
+        console.log(`Capture site title as: ${await page.title()}`);
     }
     async generateUID() {
         await this.shadowRoot.locator(this.generateButtonLocator).click();
