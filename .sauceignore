@@ -1,0 +1,7 @@
+# .sauceignore
+
+# Ignore media files
+*.png
+*.jpeg
+*.jpg
+*.mp4

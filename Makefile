@@ -1,5 +1,8 @@
 make install:
 	npm install
 
-make test:
+make local-tests:
 	npm test
+
+make sauce-labs-tests:
+	saucectl run

@@ -7,20 +7,16 @@ let browser: Browser;
 setDefaultTimeout(30000);
 
 Before(async () => {
-    try {
-        browser = await chromium.launch({headless: false});
-        const context = await browser.newContext();
-        page = await context.newPage();
-        await page.goto("about:blank");
-        console.log(`Capture site title as ${await page.title()}`);
-    } catch (error) {
-        console.log(error)
-    }
+    browser = await chromium.launch({headless: false});
+    const context = await browser.newContext();
+    page = await context.newPage();
+    await page.goto("about:blank");
     return page;
 });
 
 After(async () => {
     await browser.close();
+
 })
 
 export {page, browser}
